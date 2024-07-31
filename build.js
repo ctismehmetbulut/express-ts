@@ -6,6 +6,6 @@ build({
   bundle: true,
   outfile: 'dist/app.js',
   platform: 'node',
-  target: 'node14',
+  target: 'node20',
   external: ['express'], // add any other external dependencies here
 }).catch(() => process.exit(1));
