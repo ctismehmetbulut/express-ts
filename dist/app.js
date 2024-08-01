@@ -1,8 +1,29 @@
 "use strict";
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
 
 // node_modules/.pnpm/object-assign@4.1.1/node_modules/object-assign/index.js
 var require_object_assign = __commonJS({
@@ -15115,7 +15136,7 @@ var require_get_intrinsic = __commonJS({
       "%encodeURIComponent%": encodeURIComponent,
       "%Error%": $Error,
       "%eval%": eval,
-       
+      // eslint-disable-line no-eval
       "%EvalError%": $EvalError,
       "%Float32Array%": typeof Float32Array === "undefined" ? undefined2 : Float32Array,
       "%Float64Array%": typeof Float64Array === "undefined" ? undefined2 : Float64Array,
@@ -16127,7 +16148,7 @@ var require_side_channel = __commonJS({
       } else {
         objects.next = /** @type {import('.').ListNode<typeof value>} */
         {
-           
+          // eslint-disable-line no-param-reassign, no-extra-parens
           key,
           next: objects.next,
           value
@@ -16861,7 +16882,7 @@ var require_parse = __commonJS({
         comma: typeof opts.comma === "boolean" ? opts.comma : defaults.comma,
         decoder: typeof opts.decoder === "function" ? opts.decoder : defaults.decoder,
         delimiter: typeof opts.delimiter === "string" || utils.isRegExp(opts.delimiter) ? opts.delimiter : defaults.delimiter,
-         
+        // eslint-disable-next-line no-implicit-coercion, no-extra-parens
         depth: typeof opts.depth === "number" || opts.depth === false ? +opts.depth : defaults.depth,
         ignoreQueryPrefix: opts.ignoreQueryPrefix === true,
         interpretNumericEntities: typeof opts.interpretNumericEntities === "boolean" ? opts.interpretNumericEntities : defaults.interpretNumericEntities,
@@ -17143,15 +17164,17 @@ var require_body_parser = __commonJS({
 });
 
 // src/app.ts
-var express = require("express");
-var app = express();
-var cors = require_lib();
-var bodyParser = require_body_parser();
-app.use(cors({
-  exposedHeaders: ["X-Error-Code"]
-}));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+var import_express = __toESM(require("express"));
+var import_cors = __toESM(require_lib());
+var import_body_parser = __toESM(require_body_parser());
+var app = (0, import_express.default)();
+app.use(
+  (0, import_cors.default)({
+    exposedHeaders: ["X-Error-Code"]
+  })
+);
+app.use(import_body_parser.default.json());
+app.use(import_body_parser.default.urlencoded({ extended: true }));
 app.use((req, res, next) => {
   if (req.originalUrl === "/favicon.ico") {
     res.status(204).end();
@@ -17161,7 +17184,6 @@ app.use((req, res, next) => {
 });
 app.get("/", (req, res) => res.send("Express on Vercel"));
 app.listen(3e3, () => console.log("Server ready on port 3000."));
-module.exports = app;
 /*! Bundled license information:
 
 object-assign/index.js:
