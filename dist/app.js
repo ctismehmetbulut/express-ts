@@ -15115,7 +15115,7 @@ var require_get_intrinsic = __commonJS({
       "%encodeURIComponent%": encodeURIComponent,
       "%Error%": $Error,
       "%eval%": eval,
-      // eslint-disable-line no-eval
+       
       "%EvalError%": $EvalError,
       "%Float32Array%": typeof Float32Array === "undefined" ? undefined2 : Float32Array,
       "%Float64Array%": typeof Float64Array === "undefined" ? undefined2 : Float64Array,
@@ -16127,7 +16127,7 @@ var require_side_channel = __commonJS({
       } else {
         objects.next = /** @type {import('.').ListNode<typeof value>} */
         {
-          // eslint-disable-line no-param-reassign, no-extra-parens
+           
           key,
           next: objects.next,
           value
@@ -16861,7 +16861,7 @@ var require_parse = __commonJS({
         comma: typeof opts.comma === "boolean" ? opts.comma : defaults.comma,
         decoder: typeof opts.decoder === "function" ? opts.decoder : defaults.decoder,
         delimiter: typeof opts.delimiter === "string" || utils.isRegExp(opts.delimiter) ? opts.delimiter : defaults.delimiter,
-        // eslint-disable-next-line no-implicit-coercion, no-extra-parens
+         
         depth: typeof opts.depth === "number" || opts.depth === false ? +opts.depth : defaults.depth,
         ignoreQueryPrefix: opts.ignoreQueryPrefix === true,
         interpretNumericEntities: typeof opts.interpretNumericEntities === "boolean" ? opts.interpretNumericEntities : defaults.interpretNumericEntities,
