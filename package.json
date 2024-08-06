@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node dist/app.js",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'npm run build && node dist/app.js'",
+    "dev": "nodemon dist/app.js --watch 'src/**/*.ts'",
     "build": "node build.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.ts\"",
     "lint": "eslint . --ext .ts"
