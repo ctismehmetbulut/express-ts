@@ -1,5 +1,5 @@
 // build.js
-const fs = require('fs-extra');
+const fs_extra = require('fs-extra');
 const path = require('path');
 const { build } = require('esbuild');
 const fs = require('fs');
@@ -8,7 +8,7 @@ const fs = require('fs');
 const distPath = path.resolve(__dirname, 'dist');
 
 // Remove the dist directory
-fs.removeSync(distPath);
+fs_extra.removeSync(distPath);
 
 console.log('Build directory cleaned.');
 
