@@ -8,4 +8,6 @@ build({
   platform: 'node',
   target: 'node20',
   external: ['express'], // add any other external dependencies here
+  minify: true, // Add this for production builds
+  sourcemap: true, // Add this for easier debugging
 }).catch(() => process.exit(1));

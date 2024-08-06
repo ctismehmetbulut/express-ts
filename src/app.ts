@@ -1,16 +1,18 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
-import bodyParser from 'body-parser';
+import morgan from 'morgan';
 
 const app = express();
+
+app.use(morgan('dev')); // Add this line for logging
+app.use(express.json()); // Use this instead of bodyParser
+app.use(express.urlencoded({ extended: true })); // Use this instead of bodyParser
 
 app.use(
   cors({
     exposedHeaders: ['X-Error-Code'],
   }),
 );
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 // Middleware to ignore /favicon.ico requests
 app.use((req: Request, res: Response, next: NextFunction) => {

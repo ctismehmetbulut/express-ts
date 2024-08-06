@@ -7,7 +7,7 @@ module.exports = [
   {
     files: ['src/**/*.ts', 'test/**/*.ts'],
     languageOptions: {
-      parser: typescriptEslintParser,
+      parser: tseslint.parser,
       parserOptions: {
         project: './tsconfig.json',
       },
